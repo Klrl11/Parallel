@@ -16,7 +16,6 @@ var sw = Stopwatch.StartNew();
 Console.WriteLine("Последовательное выполнение");
 foreach (var size in sizes)
 {
-    Console.WriteLine($"Size: {size}");
     sw.Restart();
     long result = CalculateSequential(size);
     sw.Stop();
@@ -34,7 +33,6 @@ foreach (var executor in executors)
     Console.WriteLine(executor.GetType().Name);
     foreach (int size in sizes)
     {
-        Console.WriteLine($"Size: {size}");
         sw.Restart();
         long parallelSum = executor.CalculateSum(size);
         sw.Stop();
