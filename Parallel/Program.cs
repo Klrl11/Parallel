@@ -22,7 +22,7 @@ foreach (var size in sizes)
     sw.Stop();
 
     var time = sw.ElapsedMilliseconds;
-    Console.WriteLine($"Sum: {result}, ExecutionTime: {time}ms");
+    Console.WriteLine($"Size: {size}, Sum: {result}, ExecutionTime: {time}ms");
 }
 
 
@@ -39,7 +39,7 @@ foreach (var executor in executors)
         long parallelSum = executor.CalculateSum(size);
         sw.Stop();
         var parallelTime = sw.ElapsedMilliseconds;
-        Console.WriteLine($"ParallelSum: {parallelSum}, ExecutionTime: {parallelTime}ms");
+        Console.WriteLine($"Size: {size}, ParallelSum: {parallelSum}, ExecutionTime: {parallelTime}ms");
     }
 }
 static long CalculateSequential(int m)
